@@ -1,0 +1,2 @@
+bmi <- readRDS('bmi')
+devtools::use_data(bmi)

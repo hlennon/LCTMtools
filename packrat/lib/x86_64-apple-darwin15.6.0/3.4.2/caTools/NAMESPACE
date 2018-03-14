@@ -1,0 +1,7 @@
+useDynLib("caTools")
+
+# Export all names
+exportPattern(".")
+
+import(bitops)
+

@@ -1,0 +1,32 @@
+Package: reprex
+Title: Prepare Reproducible Example Code for Sharing
+Version: 0.1.1
+Authors@R: c(
+    person("Jennifer", "Bryan", , "jenny.f.bryan@gmail.com", role = c("aut", "cre")),
+    person("David", "Robinson", , "admiral.david@gmail.com", role = "aut")
+    )
+Description: Convenience wrapper that uses the 'rmarkdown' package to render
+  small snippets of code to target formats that include both code and output.
+  The goal is to encourage the sharing of small, reproducible, and runnable
+  examples on code-oriented websites, such as <http://stackoverflow.com> and
+  <https://github.com>, or in email. 'reprex' also extracts clean, runnable R
+  code from various common formats, such as copy/paste from an R session.
+Depends: R (>= 3.0.2)
+License: MIT + file LICENSE
+LazyData: true
+URL: https://github.com/jennybc/reprex
+BugReports: https://github.com/jennybc/reprex/issues
+Imports: callr, clipr (>= 0.3.0), knitr, rmarkdown, tools, utils,
+        whisker
+Suggests: covr, devtools, formatR, fortunes, miniUI, rstudioapi, shiny,
+        shinyjs, testthat
+SystemRequirements: pandoc (>= 1.12.3) - http://pandoc.org
+RoxygenNote: 5.0.1.9000
+NeedsCompilation: no
+Packaged: 2017-01-12 22:53:51 UTC; jenny
+Author: Jennifer Bryan [aut, cre],
+  David Robinson [aut]
+Maintainer: Jennifer Bryan <jenny.f.bryan@gmail.com>
+Repository: CRAN
+Date/Publication: 2017-01-13 00:27:33
+Built: R 3.4.0; ; 2017-04-21 13:55:05 UTC; unix

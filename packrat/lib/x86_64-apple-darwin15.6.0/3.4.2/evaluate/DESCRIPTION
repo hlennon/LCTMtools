@@ -1,0 +1,35 @@
+Package: evaluate
+Type: Package
+Title: Parsing and Evaluation Tools that Provide More Details than the
+        Default
+Version: 0.10.1
+Date: 2017-06-24
+Authors@R: c(
+    person("Hadley", "Wickham", role = "aut"),
+    person("Yihui", "Xie", role = c("cre", "ctb"), email = "xie@yihui.name"),
+    person("Michael", "Lawrence", role = "ctb"),
+    person("Thomas", "Kluyver", role = "ctb"),
+    person("Barret", "Schloerke", role = "ctb"),
+    person("Adam", "Ryczkowski", role = "ctb")
+    )
+Description: Parsing and evaluation tools that make it easy to recreate the
+    command line behaviour of R.
+License: MIT + file LICENSE
+URL: https://github.com/hadley/evaluate
+BugReports: https://github.com/hadley/evaluate/issues
+Depends: R (>= 3.0.2)
+Imports: methods, stringr (>= 0.6.2)
+Suggests: testthat, lattice, ggplot2
+RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2017-06-23 22:15:15 UTC; yihui
+Author: Hadley Wickham [aut],
+  Yihui Xie [cre, ctb],
+  Michael Lawrence [ctb],
+  Thomas Kluyver [ctb],
+  Barret Schloerke [ctb],
+  Adam Ryczkowski [ctb]
+Maintainer: Yihui Xie <xie@yihui.name>
+Repository: CRAN
+Date/Publication: 2017-06-24 07:25:41 UTC
+Built: R 3.4.1; ; 2017-07-03 11:17:49 UTC; unix

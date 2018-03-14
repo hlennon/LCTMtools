@@ -1,0 +1,50 @@
+Type: Package
+Package: dbplyr
+Title: A 'dplyr' Back End for Databases
+Version: 1.2.0
+Authors@R: c(
+    person("Hadley", "Wickham", , "hadley@rstudio.com", c("aut", "cre")),
+    person("Edgar", "Ruiz", role = "aut"),
+    person("RStudio", role = c("cph", "fnd"))
+    )
+Description: A 'dplyr' back end for databases that allows you to work with 
+    remote database tables as if they are in-memory data frames. Basic features
+    works with any database that has a 'DBI' back end; more advanced features 
+    require 'SQL' translation to be provided by the package author.
+License: MIT + file LICENSE
+URL: https://github.com/tidyverse/dbplyr
+BugReports: https://github.com/tidyverse/dplyr/issues
+Depends: R (>= 3.2)
+Imports: assertthat (>= 0.2.0), DBI (>= 0.7), dplyr (>= 0.7.4), glue
+        (>= 1.2.0), methods, purrr (>= 0.2.4), R6 (>= 2.2.2), rlang (>=
+        0.1.6), tibble (>= 1.4.1), tidyselect (>= 0.2.2), utils
+Suggests: bit64, covr, knitr, Lahman (>= 5.0.0), nycflights13 (>=
+        0.2.2), rmarkdown, RMariaDB (>= 1.0.2), RMySQL (>= 0.10.11),
+        RPostgreSQL (>= 0.4.1), RSQLite (>= 2.0), testthat (>= 2.0.0)
+VignetteBuilder: knitr
+LazyData: yes
+RoxygenNote: 6.0.1
+Collate: 'cache.r' 'compat-purrr.R' 'data-lahman.r'
+        'data-nycflights13.r' 'db-compute.R' 'db-mysql.r'
+        'db-odbc-access.R' 'db-odbc-hive.R' 'db-odbc-impala.R'
+        'db-odbc-mssql.R' 'db-odbc-oracle.R' 'db-odbc-redshift.R'
+        'db-odbc-teradata.R' 'db-postgres.r' 'db-roracle.R'
+        'db-sqlite.r' 'dbi-s3.r' 'dbplyr.R' 'do.r' 'explain.r'
+        'utils.r' 'ident.R' 'lazy-ops.R' 'memdb.R' 'partial-eval.r'
+        'query.r' 'remote.R' 'schema.R' 'simulate.r' 'sql-build.R'
+        'sql-escape.r' 'sql-expr.R' 'sql-generic.R' 'sql-optimise.R'
+        'sql-query.R' 'sql-render.R' 'sql.R' 'src-sql.r' 'src_dbi.R'
+        'tbl-lazy.R' 'tbl-sql.r' 'test-frame.R' 'testthat.r'
+        'translate-sql-helpers.r' 'translate-sql-window.r'
+        'translate-sql-base.r' 'translate-sql-clause.r'
+        'translate-sql-odbc.R' 'translate-sql-paste.R'
+        'translate-sql.r' 'utils-format.r' 'window.R' 'zzz.R'
+NeedsCompilation: no
+Packaged: 2017-12-29 18:11:29 UTC; hadley
+Author: Hadley Wickham [aut, cre],
+  Edgar Ruiz [aut],
+  RStudio [cph, fnd]
+Maintainer: Hadley Wickham <hadley@rstudio.com>
+Repository: CRAN
+Date/Publication: 2018-01-03 13:35:30 UTC
+Built: R 3.4.3; ; 2018-01-24 05:52:13 UTC; unix

@@ -1,0 +1,31 @@
+Package: tidyselect
+Title: Select from a Set of Strings
+Version: 0.2.3
+Authors@R: c(
+    person("Lionel", "Henry", ,"lionel@rstudio.com", c("aut", "cre")),
+    person("Hadley", "Wickham", ,"hadley@rstudio.com", "aut"),
+    person("RStudio", role = "cph")
+    )
+Description: A backend for the selecting functions of the 'tidyverse'.
+    It makes it easy to implement select-like functions in your own
+    packages in a way that is consistent with other 'tidyverse'
+    interfaces for selection.
+Depends: R (>= 3.1.0)
+Imports: glue, purrr, rlang (>= 0.1), Rcpp (>= 0.12.0)
+Suggests: dplyr, testthat
+LinkingTo: Rcpp (>= 0.12.0),
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+RoxygenNote: 6.0.1
+NeedsCompilation: yes
+Packaged: 2017-11-06 19:12:16 UTC; lionel
+Author: Lionel Henry [aut, cre],
+  Hadley Wickham [aut],
+  RStudio [cph]
+Maintainer: Lionel Henry <lionel@rstudio.com>
+Repository: CRAN
+Date/Publication: 2017-11-06 21:55:42 UTC
+Built: R 3.4.2; x86_64-apple-darwin15.6.0; 2017-11-07 05:29:52 UTC; unix
+Archs: tidyselect.so.dSYM

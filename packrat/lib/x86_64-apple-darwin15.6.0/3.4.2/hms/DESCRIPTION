@@ -1,0 +1,26 @@
+Package: hms
+Title: Pretty Time of Day
+Date: 2018-01-23
+Version: 0.4.1
+Authors@R: c(
+    person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org"),
+    person("The R Consortium", role = "fnd")
+    )
+Description: Implements an S3 class for storing and formatting time-of-day
+    values, based on the 'difftime' class.
+Imports: methods, pkgconfig, rlang
+Suggests: crayon, lubridate, pillar (>= 1.1.0), testthat
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/tidyverse/hms
+BugReports: https://github.com/tidyverse/hms/issues
+RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2018-01-24 15:53:20 UTC; muelleki
+Author: Kirill Müller [aut, cre],
+  The R Consortium [fnd]
+Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
+Repository: CRAN
+Date/Publication: 2018-01-24 17:56:47 UTC
+Built: R 3.4.3; ; 2018-01-25 05:44:43 UTC; unix
