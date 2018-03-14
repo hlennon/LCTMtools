@@ -11,5 +11,7 @@ All statistical (R and SAS) codes used to implement Latent Class Trajectory Mode
 An example (simulated) dataset 'bmi' and 'bmi_long' (long format version) is provided to describe the steps throughout.
 
 To install the R package, use the command 
+```{r}
 devtools::install_github("hlennon/LCTMtools")
+```
 in the R console.
