@@ -1,8 +1,8 @@
 # LCTMtools
 
-Latent Class Trajectory Modelling Tools: an R Package
+Latent Class Trajectory Modelling Tools: an R Package  
 
-Maintainer: Hannah Lennon
+Maintainer: Hannah Lennon  
 Contact: hannah.lennon@manchester.ac.uk  
 Last Updated: 14th March 2018
 
