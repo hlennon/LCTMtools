@@ -3,7 +3,7 @@
 Latent Class Trajectory Modelling Tools: an R Package  
 
 Maintainer: Hannah Lennon  
-Contact: hannah.lennon@manchester.ac.uk  
+Contact: hannah.lennon.manchester@gmail.com
 Last Updated: 14th March 2018
 
 
