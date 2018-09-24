@@ -27,19 +27,37 @@ https://bmjopen.bmj.com/content/8/7/e020683
 
 
 ## Example
-```{r}
+
+```{r eval=TRUE}
 library(LCTMtools)
 set.seed(002010800)
 data(bmi_long, package = "LCTMtools" )
 
-model2classes <- hlme(fixed = BMI ~ Age + I(Age^2), 
-mixture= ~ Age, 
-random = ~ Age, 
-ng = 2, 
-nwg = TRUE,  
-subject = "ID", 
-data = bmi_long[1:500, ])
 
+# Use the hlme function from the 'lcmm' R package to fit a 2 class latent class trajectory model
+model2classes <- hlme(fixed = BMI ~ Age + I(Age^2), 
+                      mixture= ~ Age, 
+                      random = ~ Age, 
+                      ng = 2, 
+                      nwg = TRUE,  
+                      subject = "ID", 
+                      data = bmi_long[1:500, ] )
+
+
+# Compute model adequacy measures
 LCTMtoolkit(model2classes)
 
+
+# Compare with a 3 class model
+model3classes <- hlme(fixed = BMI ~ Age + I(Age^2), 
+                      mixture= ~ Age, 
+                      random = ~ Age, 
+                      ng = 3, 
+                      nwg = TRUE,  
+                      subject = "ID", 
+                      data = bmi_long[1:500, ] )
+
+LCTMtoolkit(model3classes)
+
+LCTMcompare(model2classes, model3classes)
 ```  
