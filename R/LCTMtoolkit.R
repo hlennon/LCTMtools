@@ -7,7 +7,7 @@
 #' @return A selection of model adequacy tests, including the APPA (average posterior probability of assignment), the OCC (odds of correct classification), entropy $E$, Relative entropy ($E_k$),
 #' @examples
 #' data(bmi_long, package="LCTMtools")
-#' require(lcmm)
+#' library(lcmm)
 #' model2class <- hlme(BMI ~Age, mixture= ~Age, random= ~Age,
 #' nwg=TRUE, ng=2, subject="ID", data=bmi_long[1:500, ])
 #' postprob(model2class)
