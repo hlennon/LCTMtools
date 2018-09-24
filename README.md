@@ -3,7 +3,7 @@
 Latent Class Trajectory Modelling Tools: an R Package  
 
 Maintainer: Hannah Lennon  
-Contact: hannah.lennon.manchester@gmail.com
+Contact: hannah.lennon.manchester@gmail.com  
 Last Updated: 24th September 2018
 
 
@@ -22,3 +22,24 @@ Lennon H, Kelly S, Sperrin M, et al Framework to construct and interpret latent 
 
 Available at
 https://bmjopen.bmj.com/content/8/7/e020683
+
+
+
+
+## Example
+```{r}
+library(LCTMtools)
+set.seed(002010800)
+data(bmi_long, package = "LCTMtools" )
+
+model2classes <- hlme(fixed = BMI ~ Age + I(Age^2), 
+mixture= ~ Age, 
+random = ~ Age, 
+ng = 2, 
+nwg = TRUE,  
+subject = "ID", 
+data = bmi_long[1:500, ])
+
+LCTMtoolkit(model2classes)
+
+```  
