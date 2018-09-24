@@ -8,7 +8,9 @@
 LCTMtoolkit(model)
 }
 \arguments{
-\item{model}{is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
+\item{modelA}{the models to be compared which is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
+
+\item{modelB}{the models to be compared which is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
 }
 \value{
 A selection of model adequacy tests, including the APPA (average posterior probability of assignment), the OCC (odds of correct classification), entropy $E$, Relative entropy ($E_k$),

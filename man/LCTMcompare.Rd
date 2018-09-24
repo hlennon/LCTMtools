@@ -19,11 +19,27 @@ The function LCTMcompare gives a summary of comparison between fitted LCTM model
 \examples{
 data(bmi_long, package="LCTMtools")
 require(lcmm)
-modelA <- hlme(BMI ~Age, mixture= ~Age, random= ~Age,
-nwg=TRUE, ng=2, subject="ID", data=bmi_long[1:500, ])
-postprob(model2class)
-modelB <- hlme(BMI ~Age, mixture= ~1, random= ~1,
-nwg=FALSE, ng=2, subject="ID", data=bmi_long[1:500, ])
-postprob(modelA, modelB)
-LCTMcompare(modelA, modelB)
+library(LCTMtools)
+set.seed(002010800)
+data(bmi_long, package = "LCTMtools" )
+# Use the hlme function from the 'lcmm' R package to fit a 2 class latent class trajectory model
+model2classes <- hlme(fixed = BMI ~ Age + I(Age^2),
+                      mixture= ~ Age,
+                      random = ~ Age,
+                      ng = 2,
+                      nwg = TRUE,
+                      subject = "ID",
+                      data = bmi_long[1:500, ] )
+# Compute model adequacy measures
+LCTMtoolkit(model2classes)
+# Compare with a 3 class model
+model3classes <- hlme(fixed = BMI ~ Age + I(Age^2),
+                      mixture= ~ Age,
+                      random = ~ Age,
+                      ng = 3,
+                      nwg = TRUE,
+                      subject = "ID",
+                      data = bmi_long[1:500, ] )
+LCTMtoolkit(model3classes)
+LCTMcompare(model2classes, model3classes)
 }
