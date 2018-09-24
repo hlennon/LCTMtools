@@ -17,24 +17,30 @@ All statistical (R and SAS) codes used to implement Latent Class Trajectory Mode
 
 An example (simulated) dataset 'bmi' and 'bmi_long' (long format version) is provided to describe the steps throughout.
 
-*Reference*
-Lennon H, Kelly S, Sperrin M, et al Framework to construct and interpret latent class trajectory modelling BMJ Open 2018;8:e020683. doi: 10.1136/bmjopen-2017-020683
+
+
+### Reference  
+Lennon H, Kelly S, Sperrin M, et al Framework to construct and interpret latent class trajectory modelling BMJ Open 2018;8:e020683. doi: 10.1136/bmjopen-2017-020683  
 
 Available at
 https://bmjopen.bmj.com/content/8/7/e020683
 
 
+## Help Files
+There are two help manuals available above:    
++ 1) The standard R manual detailing the input and outputs of each of the functions, called LCTMtools.pdf  
++ 2) A vignette with a guided example, called LCTMtools-vignette.pdf 
 
 
-## Example
+## Brief Example
 
 ```{r eval=TRUE}
 library(LCTMtools)
-set.seed(002010800)
 data(bmi_long, package = "LCTMtools" )
 
 
 # Use the hlme function from the 'lcmm' R package to fit a 2 class latent class trajectory model
+set.seed(002010800)
 model2classes <- hlme(fixed = BMI ~ Age + I(Age^2), 
                       mixture= ~ Age, 
                       random = ~ Age, 
@@ -49,6 +55,7 @@ LCTMtoolkit(model2classes)
 
 
 # Compare with a 3 class model
+set.seed(002010800)
 model3classes <- hlme(fixed = BMI ~ Age + I(Age^2), 
                       mixture= ~ Age, 
                       random = ~ Age, 
@@ -57,7 +64,11 @@ model3classes <- hlme(fixed = BMI ~ Age + I(Age^2),
                       subject = "ID", 
                       data = bmi_long[1:500, ] )
 
+
 LCTMtoolkit(model3classes)
 
 LCTMcompare(model2classes, model3classes)
 ```  
+
+
+### Citation
