@@ -7,12 +7,11 @@
 #' @export
 
 
-relative_entropy <- function(p){
+relative_entropy <- function(p) {
+  K <- ncol(p)
+  n <- nrow(p)
 
-                    K <- ncol(p)
-                    n <- nrow(p)
+  relEntropy <- 1 + (sum(p * log(p)) / (n * log(K)))
 
-                    relEntropy <- 1 + (sum(p*log(p))/(n*log(K)))
-
-                    return(relEntropy)
+  return(relEntropy)
 }

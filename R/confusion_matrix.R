@@ -14,26 +14,23 @@
 #' confusion_matrix(model1, model2)}
 #' @export
 
-confusion_matrix <- function(model1, model2, name1="Model_1", name2="Model_2"){
-                    # model1 <- model1[sort(model1$ID),]
-                    R    <- model1$pprob$class
-                    Sas  <- model2$pprob$class
-                    K <- ncol(model1$pprob)-2
+confusion_matrix <- function(model1, model2, name1 = "Model_1", name2 = "Model_2") {
+  # model1 <- model1[sort(model1$ID),]
+  R <- model1$pprob$class
+  Sas <- model2$pprob$class
+  K <- ncol(model1$pprob) - 2
 
 
-                    a <- eval(parse(text=paste0("c(",paste0("sum(R==1&Sas==",1:K,")", collapse=","), ")")))
+  a <- eval(parse(text = paste0("c(", paste0("sum(R==1&Sas==", 1:K, ")", collapse = ","), ")")))
 
-                    for(i in 2:K){
-                                        b <- eval(parse(text=paste0("c(",paste0("sum(R==",i,"&Sas==",1:K,")", collapse=","), ")")))
-                                        a <- rbind(a,b)
-                    }
+  for (i in 2:K) {
+    b <- eval(parse(text = paste0("c(", paste0("sum(R==", i, "&Sas==", 1:K, ")", collapse = ","), ")")))
+    a <- rbind(a, b)
+  }
 
-                    a <- cbind(a,rowSums(a))
-                    a <- rbind(a, colSums(a))
-                    colnames(a)=c(paste0("Class_",1:K), name1)
-                    rownames(a)=c(paste0("Class_",1:K), name2)
-                    return(a)
+  a <- cbind(a, rowSums(a))
+  a <- rbind(a, colSums(a))
+  colnames(a) <- c(paste0("Class_", 1:K), name1)
+  rownames(a) <- c(paste0("Class_", 1:K), name2)
+  return(a)
 }
-
-
-

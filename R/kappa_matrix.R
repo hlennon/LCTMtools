@@ -16,17 +16,17 @@
 #' kappa_matrix(ConfMatrix)
 #' @export
 
-kappa_matrix <- function(ConfMatrix, acc=2){
-                    K <- nrow(ConfMatrix)-1
-                    x <- cohen.kappa(ConfMatrix[1:K, 1:K])
-                    mxu <- round(x$kappa,acc)
-                    lou <- round(x$confid[1,1],acc)
-                    upu <- round(x$confid[1,3],acc)
-                    mxw <- round(x$weighted.kappa,acc)
-                    low <- round(x$confid[2,1],acc)
-                    upw <- round(x$confid[2,3],acc)
-                    unw <- c(paste0("Kappa Values: (unweighted) ", mxu, " (", lou,", ",upu, ") "))
-                    w   <- c(paste0("Kappa Values: (weighted) ", mxw, " (", low,", ",upw, ") "))
+kappa_matrix <- function(ConfMatrix, acc = 2) {
+  K <- nrow(ConfMatrix) - 1
+  x <- cohen.kappa(ConfMatrix[1:K, 1:K])
+  mxu <- round(x$kappa, acc)
+  lou <- round(x$confid[1, 1], acc)
+  upu <- round(x$confid[1, 3], acc)
+  mxw <- round(x$weighted.kappa, acc)
+  low <- round(x$confid[2, 1], acc)
+  upw <- round(x$confid[2, 3], acc)
+  unw <- c(paste0("Kappa Values: (unweighted) ", mxu, " (", lou, ", ", upu, ") "))
+  w <- c(paste0("Kappa Values: (weighted) ", mxw, " (", low, ", ", upw, ") "))
 
-                    return(list(unweighted_kappa=unw, weighted_kappa=w))
+  return(list(unweighted_kappa = unw, weighted_kappa = w))
 }

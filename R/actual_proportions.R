@@ -7,15 +7,14 @@
 #' @export
 
 actual_proportions <- function(p) {
+  K <- ncol(p)
 
-                    K <- ncol(p)
+  # determine class
+  group <- class_assignment(p)
 
-                    # determine class
-                    group <- class_assignment(p)
+  # Tabulate the actual proportions
+  actprop <- tabulate(group, nbins = K) / nrow(p)
 
-                    # Tabulate the actual proportions
-                    actprop <- tabulate(group, nbins=K)/nrow(p)
-
-                    # return the proportion of individuals assignes using the max post prob rule
-                    return(actprop)
-                    }
+  # return the proportion of individuals assignes using the max post prob rule
+  return(actprop)
+}

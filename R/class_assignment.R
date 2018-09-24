@@ -7,5 +7,5 @@
 #' @export
 
 class_assignment <- function(p) {
-                   as.numeric(apply(p, 1, which.max))
+  as.numeric(apply(p, 1, which.max))
 }

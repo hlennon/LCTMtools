@@ -7,10 +7,10 @@
 #' \dontrun{occ(p, pi)}
 #' @export
 
-occ <- function(p, pi){
-                    app <- appa(p)
-                    numerator   <- app/(1-app)
-                    denominator <- pi/(1-pi)
-                    occ <- numerator/denominator
-                    return(occ)
+occ <- function(p, pi) {
+  app <- appa(p)
+  numerator <- app / (1 - app)
+  denominator <- pi / (1 - pi)
+  occ <- numerator / denominator
+  return(occ)
 }

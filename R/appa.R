@@ -7,18 +7,19 @@
 #' @export
 
 appa <- function(p) {
-                    # determine class size
-                    K <- ncol(p)
+  # determine class size
+  K <- ncol(p)
 
-                    # determine class
-                    group <- class_assignment(p)
+  # determine class
+  group <- class_assignment(p)
 
-                    # save vector for appa values
-                    app <- rep(NA, times=K)
+  # save vector for appa values
+  app <- rep(NA, times = K)
 
-                    # Compute average posterior probabilites
-                    for(i in 1:K) { classp <- p[group==i, i]
-                    if(length(classp)!=0) app[i] <- mean(classp)
-                                        }
-                    return(app)
-                    }
+  # Compute average posterior probabilites
+  for (i in 1:K) {
+    classp <- p[group == i, i]
+    if (length(classp) != 0) app[i] <- mean(classp)
+  }
+  return(app)
+}

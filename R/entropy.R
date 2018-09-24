@@ -8,10 +8,8 @@
 #' \dontrun{entropy(p)}
 #' @export
 
-entropy <- function(p){
+entropy <- function(p) {
+  ent <- -1 * sum(p * log(p))
 
-                    ent <- -1*sum(p*log(p))
-
-                    return(ent)
+  return(ent)
 }
-
