@@ -1,0 +1,33 @@
+To cite the 'LCTMtools' R package in publications use:
+
+Hannah Lennon. {LCTMtools}: Latent Class Trajectory Models tools R Functions. R package version 0.1.2.
+
+Lennon, H., Kelly, S. et al., (2018) A Framework to construct and interpret latent class trajectory modelling. BMJ Open, 2018; 8:e020683. doi:0.1136/bmjopen-2017-020683.
+
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+
+Corresponding BibTeX entries:
+
+bibentry(bibtype = "Manual",
+         title = "{LCTMtools}: Latent Class Trajectory Models tools",
+         author = person("Hannah", "Lennon"),
+         year = 2018,
+         note = note,
+         url = "https://github.com/hlennon/LCTMtools")
+
+@article {Lennon2018,
+	author = {Lennon, Hannah and Kelly, Scott and Sperrin, Matthew and Buchan, Iain and Cross, Amanda J and Leitzmann, Michael and Cook, Michael B and Renehan, Andrew G},
+	title = {Framework to construct and interpret latent class trajectory modelling},
+	volume = {8},
+	number = {7},
+	year = {2018},
+	doi = {10.1136/bmjopen-2017-020683},
+	publisher = {British Medical Journal Publishing Group},
+	issn = {2044-6055},
+	URL = {https://github.com/hlennon/LCTMtools},
+	eprint = {https://bmjopen.bmj.com/content/8/7/e020683.full.pdf},
+	journal = {BMJ Open}
+}
+

@@ -72,3 +72,10 @@ LCTMcompare(model2classes, model3classes)
 
 
 ### Citation
+Hannah Lennon. {LCTMtools}: Latent Class Trajectory Models tools R Functions. R package version 0.1.2.
+
+
+Lennon H, Kelly S, Sperrin M, et al
+    Framework to construct and interpret latent class trajectory modelling
+    BMJ Open 2018;8:e020683. doi: 10.1136/bmjopen-2017-020683
+
