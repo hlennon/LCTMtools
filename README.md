@@ -79,3 +79,7 @@ Lennon H, Kelly S, Sperrin M, et al
     Framework to construct and interpret latent class trajectory modelling
     BMJ Open 2018;8:e020683. doi: 10.1136/bmjopen-2017-020683
 
+### Thanks
+A special thank you to Charlotte Watson for testing the R package.  
+
+If you notice any bugs or just want to chat, get in touch.  
