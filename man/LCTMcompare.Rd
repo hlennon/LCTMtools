@@ -43,3 +43,6 @@ model3classes <- hlme(fixed = BMI ~ Age + I(Age^2),
 LCTMtoolkit(model3classes)
 LCTMcompare(model2classes, model3classes)
 }
+\references{
+\url{https://bmjopen.bmj.com/content/8/7/e020683}
+}

@@ -26,3 +26,6 @@ nwg=TRUE, ng=2, subject="ID", data=bmi_long[1:500, ])
 postprob(model2class)
 LCTMtoolkit(model2class)
 }
+\references{
+\url{https://bmjopen.bmj.com/content/8/7/e020683}
+}

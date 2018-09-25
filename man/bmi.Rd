@@ -3,7 +3,7 @@
 \docType{data}
 \name{bmi}
 \alias{bmi}
-\title{Body Mass Index (BMI) longitudinal measures of 10,000 individuals.}
+\title{Body Mass Index (BMI) repeated measures of 10,000 individuals in wide format.}
 \format{A list of two formats data frame with 53940 rows and 10 variables:
 \describe{
   \item{ID}{Individual ID}
