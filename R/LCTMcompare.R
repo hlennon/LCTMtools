@@ -5,6 +5,7 @@
 #'
 #' @param model is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it
 #' @return A selection of model adequacy tests, including the APPA (average posterior probability of assignment), the OCC (odds of correct classification), entropy $E$, Relative entropy ($E_k$),
+#' @references \url{https://bmjopen.bmj.com/content/8/7/e020683}
 #' @examples
 #' data(bmi_long, package="LCTMtools")
 #' require(lcmm)

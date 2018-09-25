@@ -1,4 +1,4 @@
-#' Body Mass Index (BMI) longitudinal measures of 10,000 individuals.
+#' Body Mass Index (BMI) repeated measures of 10,000 individuals in wide format.
 #'
 #' A list containing a long and wide format dataset of BMI values of 10,000 individuals.
 #'
