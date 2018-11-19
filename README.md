@@ -3,7 +3,7 @@
 Latent Class Trajectory Modelling Tools: an R Package  
 
 Maintainer: Hannah Lennon  
-Contact: hannah.lennon.manchester@gmail.com  
+Contact: lennonh@iarc.fr    
 Last Updated: 24th September 2018
 
 
@@ -13,14 +13,14 @@ devtools::install_github("hlennon/LCTMtools")
 ```  
 
 
-All statistical (R and SAS) codes used to implement Latent Class Trajectory Modelling and the tools described in the manuscript "A framework to construct and interpret latent class trajectory modelling", are available here and can be downloaded from www.github.com/hlennon/LCTMtools.  
+All statistical (R and SAS) codes used to implement Latent Class Trajectory Modelling and the tools described in the manuscript "A framework to construct and interpret Latent Class Trajectory Modelling", are available here and can be downloaded from www.github.com/hlennon/LCTMtools.  
 
 An example (simulated) dataset 'bmi' and 'bmi_long' (long format version) is provided to describe the steps throughout.
 
 
 
 ### Reference  
-Lennon H, Kelly S, Sperrin M, et al Framework to construct and interpret latent class trajectory modelling BMJ Open 2018;8:e020683. doi: 10.1136/bmjopen-2017-020683  
+Lennon H, Kelly S, Sperrin M, et al., Framework to construct and interpret Latent Class Trajectory Modelling, BMJ Open 2018;8:e020683.   
 
 Available at
 https://bmjopen.bmj.com/content/8/7/e020683
@@ -29,7 +29,7 @@ https://bmjopen.bmj.com/content/8/7/e020683
 ## Help Files
 There are two help manuals available above:    
 + 1) The standard R manual detailing the input and outputs of each of the functions, called LCTMtools.pdf  
-+ 2) A vignette with a guided example, called LCTMtools-vignette.pdf 
++ 2) A vignette with a guided example, named LCTMtools-vignette.pdf 
 
 
 ## Brief Example
@@ -76,7 +76,7 @@ Hannah Lennon. {LCTMtools}: Latent Class Trajectory Models tools R Functions. R 
 
 
 Lennon H, Kelly S, Sperrin M, et al
-    Framework to construct and interpret latent class trajectory modelling
+    Framework to construct and interpret Latent Class Trajectory Modelling
     BMJ Open 2018;8:e020683. doi: 10.1136/bmjopen-2017-020683
 
 ### Thanks
