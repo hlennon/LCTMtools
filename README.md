@@ -82,4 +82,4 @@ Lennon H, Kelly S, Sperrin M, et al
 ### Thanks
 A special thank you to Charlotte Watson for testing the R package.  
 
-If you notice any bugs or just want to chat, get in touch.  
+If you notice any bugs, have any ideas how to improve the package or just if you are missing some features, drop me an e-mail.
