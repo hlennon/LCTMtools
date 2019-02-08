@@ -1,0 +1,32 @@
+LCTMcompare             A model comparison toolkit. 'LCTMcompare'
+LCTMtoolkit             A toolkit which computes a selection of model
+                        adequacy tests 'LCTMtoolkit'
+LCTMtools               LCTMtools: A package for computing a number of
+                        Latent Class Trajectory Model tools for a given
+                        hlme() object or SAS model.
+actual_proportions      The proportion within each class AFTER class
+                        assignment (using max posterior rule)
+appa                    Computes the Average Posterior Probability
+                        Assignment (APPA) for a K latent class
+                        trajectory model.
+bmi                     Body Mass Index (BMI) repeated measures of
+                        10,000 individuals in wide format.
+bmi_long                Body Mass Index (BMI) repeated measures of
+                        10,000 individuals in long format.
+class_assignment        Maximum Class assignment
+cohen.kappa             Kappa matrix
+confusion_matrix        A confusion matrix
+entropy                 Entropy
+kappa_matrix            Kappa matrix
+mismatch                Computes the mismatch of the posterior
+                        probabilities (mismatch=actual-estimated)
+mmlcr_to_lctm           Converts an R mmclr model output to the format
+                        of R's hlme class
+occ                     The odds of correct classification is the ratio
+                        of the odds of classification based on the
+                        maximum posterior probablity classification
+                        rule and the estimated class membership
+                        proportions (pi_k).
+relative_entropy        The Relative Entropy
+sastraj_to_lctm         Converts a SAS proc traj model to the format of
+                        R's hlme class
