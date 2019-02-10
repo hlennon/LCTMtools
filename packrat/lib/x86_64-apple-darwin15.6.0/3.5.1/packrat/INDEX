@@ -5,12 +5,13 @@ init                    Initialize Packrat on a new or existing R
                         project
 install                 Install a local development package.
 install_local           Install a Package from a Local Repository
-migrate                 Migrate to Packrat Mode
+lockfile-metadata       Get / Set packrat lockfile metadata
 packify                 Automatically Enter Packrat Mode on Startup
 packrat                 Packrat: Reproducible dependency management
 packrat-external        Managing External Libraries
 packrat-mode            Packrat Mode
 packrat-options         Get/set packrat project options
+packrat-resources       Paths to Packrat Resources
 repos_create            Create a Local, CRAN-like Repository
 repos_upload            Upload a Package to a Local CRAN-like
                         Repository

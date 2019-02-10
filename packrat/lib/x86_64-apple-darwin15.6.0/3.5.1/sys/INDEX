@@ -1,0 +1,5 @@
+eval_safe               Safe Evaluation
+exec                    Running System Commands
+exec_r                  Execute R from R
+quote                   Quote arguments on Windows
+sys_config              Package config
