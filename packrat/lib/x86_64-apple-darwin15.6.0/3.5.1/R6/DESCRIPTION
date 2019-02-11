@@ -1,13 +1,15 @@
 Package: R6
 Title: Classes with Reference Semantics
 Version: 2.3.0
-Authors@R: person("Winston", "Chang", role = c("aut", "cre"), email = "winston@stdout.org")
-Description: Creates classes with reference semantics, similar to R's built-in
-    reference classes. Compared to reference classes, R6 classes are simpler
-    and lighter-weight, and they are not built on S4 classes so they do not
-    require the methods package. These classes allow public and private
-    members, and they support inheritance, even when the classes are defined in
-    different packages.
+Authors@R: person("Winston", "Chang", role = c("aut", "cre"), email =
+    "winston@stdout.org")
+Description: Creates classes with reference semantics, similar to R's
+    built-in reference classes. Compared to reference classes, R6
+    classes are simpler and lighter-weight, and they are not built on
+    S4 classes so they do not require the methods package. These
+    classes allow public and private members, and they support
+    inheritance, even when the classes are defined in different
+    packages.
 Depends: R (>= 3.0)
 Suggests: knitr, microbenchmark, pryr, testthat, ggplot2, scales
 License: MIT + file LICENSE
@@ -22,3 +24,6 @@ Maintainer: Winston Chang <winston@stdout.org>
 Repository: CRAN
 Date/Publication: 2018-10-04 15:30:03 UTC
 Built: R 3.5.0; ; 2018-10-05 12:04:11 UTC; unix
+InstallAgent: packrat 0.5.0
+InstallSource: CRAN
+Hash: 8eccabbf292b5aba632985cde6406fc3

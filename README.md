@@ -4,7 +4,7 @@ Latent Class Trajectory Modelling Tools: an R Package
 
 Maintainer: Hannah Lennon  
 Contact: lennonh@iarc.fr    
-Last Updated: 24th September 2018
+Last Updated: 11th February 2019
 
 
 To install the R package, in the R console use the command 
