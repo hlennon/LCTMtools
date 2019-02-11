@@ -22,5 +22,8 @@ A format to feed into the LCTMtoolkit() R function
 Converts a SAS proc traj model to the format of R's hlme class
 }
 \examples{
-\dontrun{sastraj_to_lctm(oe, of, op, os)}
+\dontrun{sastraj_to_lctm(oe, of, op, os)
+os$PI/100
+exp(c(M$best[1:4], 0))/(sum(exp(c(M$best[1:4], 0))))
+}
 }

@@ -6,6 +6,7 @@
 #' @return  Unweighted kappa
 #'
 #' @examples
+#' require(psych)
 #' data(bmi_long, package="LCTMtools") # NO EXAMPLE SUPPLIED
 #' @export
 

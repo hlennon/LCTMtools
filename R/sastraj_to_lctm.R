@@ -6,7 +6,10 @@
 #' @param os containts fixed effect  and class membershop parameter estimates
 #' @return  A format to feed into the LCTMtoolkit() R function
 #' @examples
-#' \dontrun{sastraj_to_lctm(oe, of, op, os)}
+#' \dontrun{sastraj_to_lctm(oe, of, op, os)
+#' os$PI/100
+#' exp(c(M$best[1:4], 0))/(sum(exp(c(M$best[1:4], 0))))
+#' }
 #' @export
 
 sastraj_to_lctm <- function(oe, of, op, os) {
@@ -20,6 +23,3 @@ sastraj_to_lctm <- function(oe, of, op, os) {
   model <- mod
   return(model)
 }
-#
-# os$PI/100
-# exp(c(M$best[1:4], 0))/(sum(exp(c(M$best[1:4], 0))))

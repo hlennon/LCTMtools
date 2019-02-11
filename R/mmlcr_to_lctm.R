@@ -20,8 +20,8 @@ mmlcr_to_lctm <- function(model) {
   mod$n <- n
   mod$K <- K
   mod$logLik <- model$loglikelihood
-  mod$BIC <- model$BIC
-  mod$AIC <- model$AIC
+  mod$BIC  <- model$BIC
+  mod$AIC  <- model$AIC
   mod$best <- unlist(model$components[[1]]$coef)
 
   return(mod)

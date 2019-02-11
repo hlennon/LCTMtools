@@ -25,7 +25,7 @@ A confusion matrix
 \dontrun{
 data(bmi_long, package="LCTMtools")
 require(lcmm)
-model1 <- hlme(BMI ~Age, mixture= ~Age, random= ~Age, nwg=TRUE, ng=2, subject="ID", data=bmi_long[1:500, ])
-model2 <- hlme(BMI ~Age, mixture= ~Age, random= ~1, nwg=FALSE, ng=2, subject="ID", data=bmi_long[1:500, ])
+model1 <- lcmm::hlme(BMI ~Age, mixture= ~Age, random= ~Age, nwg=TRUE, ng=2, subject="ID", data=bmi_long[1:500, ])
+model2 <- lcmm::hlme(BMI ~Age, mixture= ~Age, random= ~1, nwg=FALSE, ng=2, subject="ID", data=bmi_long[1:500, ])
 confusion_matrix(model1, model2)}
 }

@@ -20,8 +20,8 @@ The function LCTMtoolkit computes a selection of model adequacy tests, including
 }
 \examples{
 data(bmi_long, package="LCTMtools")
-library(lcmm)
-model2class <- hlme(BMI ~Age, mixture= ~Age, random= ~Age,
+require(lcmm)
+model2class <- lcmm::hlme(BMI ~Age, mixture= ~Age, random= ~Age,
 nwg=TRUE, ng=2, subject="ID", data=bmi_long[1:500, ])
 postprob(model2class)
 LCTMtoolkit(model2class)

@@ -16,5 +16,6 @@ Unweighted kappa
 Kappa matrix of cohen's kappa values
 }
 \examples{
+require(psych)
 data(bmi_long, package="LCTMtools") # NO EXAMPLE SUPPLIED
 }
