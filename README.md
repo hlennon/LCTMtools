@@ -4,7 +4,7 @@ Latent Class Trajectory Modelling Tools: an R Package
 
 Maintainer: Hannah Lennon  
 Contact: lennonh@iarc.fr    
-Last Updated: 11th February 2019
+Last Updated: 13th March 2019
 
 
 To install the R package, in the R console use the command 
@@ -40,14 +40,14 @@ data(bmi_long, package = "LCTMtools" )
 
 
 # Use the hlme function from the 'lcmm' R package to fit a 2 class latent class trajectory model
-set.seed(002010800)
+set.seed(100)
 library(lcmm)
-model2classes <- hlme(fixed = BMI ~ Age + I(Age^2), 
-                      mixture= ~ Age, 
-                      random = ~ Age, 
+model2classes <- hlme(fixed = bmi ~ age + I(age^2), 
+                      mixture= ~ age, 
+                      random = ~ age, 
                       ng = 2, 
                       nwg = TRUE,  
-                      subject = "ID", 
+                      subject = "id", 
                       data = bmi_long[1:500, ] )
 
 
@@ -56,13 +56,13 @@ LCTMtoolkit(model2classes)
 
 
 # Compare with a 3 class model
-set.seed(002010800)
-model3classes <- hlme(fixed = BMI ~ Age + I(Age^2), 
-                      mixture= ~ Age, 
-                      random = ~ Age, 
+set.seed(100)
+model3classes <- hlme(fixed = bmi ~ age + I(age^2), 
+                      mixture= ~ age, 
+                      random = ~ age, 
                       ng = 3, 
                       nwg = TRUE,  
-                      subject = "ID", 
+                      subject = "id", 
                       data = bmi_long[1:500, ] )
 
 
