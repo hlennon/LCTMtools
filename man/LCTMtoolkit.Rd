@@ -8,9 +8,7 @@
 LCTMtoolkit(model)
 }
 \arguments{
-\item{modelA}{the models to be compared which is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
-
-\item{modelB}{the models to be compared which is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
+\item{model}{the models to be compared which is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
 }
 \value{
 A selection of model adequacy tests, including the APPA (average posterior probability of assignment), the OCC (odds of correct classification), entropy $E$, Relative entropy ($E_k$),
@@ -19,10 +17,13 @@ A selection of model adequacy tests, including the APPA (average posterior proba
 The function LCTMtoolkit computes a selection of model adequacy tests, including the APPA (average posterior probability of assignment), the OCC (odds of correct classification), entropy E, Relative entropy (E_k), odds of correct classification is the ratio of the odds of classification based on the maximum posterior probablity classification rule and the estimated class membership proportions (pi_k)
 }
 \examples{
-data(bmi_long, package="LCTMtools")
+data(bmi_long, package='LCTMtools')
 require(lcmm)
-model2class <- lcmm::hlme(BMI ~Age, mixture= ~Age, random= ~Age,
-nwg=TRUE, ng=2, subject="ID", data=bmi_long[1:500, ])
+model2class <- lcmm::hlme(fixed = bmi ~ age,
+mixture= ~ age,
+random= ~ age,
+nwg=TRUE, ng=2, subject="id",
+data=bmi_long[1:500, ])
 postprob(model2class)
 LCTMtoolkit(model2class)
 }

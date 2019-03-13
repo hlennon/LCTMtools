@@ -9,7 +9,7 @@
 #' @export
 
 entropy <- function(p) {
-  ent <- -1 * sum(p * log(p))
-
-  return(ent)
+    ent <- -1 * sum(p * log(p), na.rm = TRUE)
+    
+    return(ent)
 }

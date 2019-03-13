@@ -4,7 +4,7 @@
 \alias{confusion_matrix}
 \title{A confusion matrix}
 \usage{
-confusion_matrix(model1, model2)
+confusion_matrix(model1, model2, "ModelA", "ModelB")
 }
 \arguments{
 \item{model1}{A fitted model from the lcmm R package (or from SAS passed through the SASmodelbuilder() function)}
@@ -19,13 +19,19 @@ confusion_matrix(model1, model2)
 A confusion matrix between two models with the same number of classes
 }
 \description{
-A confusion matrix
+A matrix, also known as a matching matrix or an error matrix, is a specific table layout that allows visualization of the performance of an algorithm, typically a supervised learning one. Each row of the matrix represents the instances in a predicted class for model 1 while each column represents the instances in class for model 2. The name stems from the fact that it makes it easy to see if the system is confusing two classes (i.e. commonly mislabeling one as another).
 }
 \examples{
 \dontrun{
-data(bmi_long, package="LCTMtools")
-require(lcmm)
-model1 <- lcmm::hlme(BMI ~Age, mixture= ~Age, random= ~Age, nwg=TRUE, ng=2, subject="ID", data=bmi_long[1:500, ])
-model2 <- lcmm::hlme(BMI ~Age, mixture= ~Age, random= ~1, nwg=FALSE, ng=2, subject="ID", data=bmi_long[1:500, ])
+data(bmi_long, package='LCTMtools')
+library(lcmm)
+model1 <- lcmm::hlme(BMI ~Age,
+mixture= ~Age,
+random= ~Age,
+nwg=TRUE, ng=2, subject='ID', data=bmi_long[1:500, ])
+model2 <- lcmm::hlme(BMI ~Age,
+mixture= ~Age,
+random= ~1,
+nwg=FALSE, ng=2, subject='ID', data=bmi_long[1:500, ])
 confusion_matrix(model1, model2)}
 }

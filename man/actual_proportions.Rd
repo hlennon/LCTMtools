@@ -2,7 +2,7 @@
 % Please edit documentation in R/actual_proportions.R
 \name{actual_proportions}
 \alias{actual_proportions}
-\title{The proportion within each class AFTER class assignment (using max posterior rule)}
+\title{The proportion within each class}
 \usage{
 actual_proportions(p)
 }
@@ -13,6 +13,7 @@ actual_proportions(p)
 The proportion within each class AFTER class assignment (using max posterior rule)
 }
 \description{
+\code{actual_proportions}
 The proportion within each class AFTER class assignment (using max posterior rule)
 }
 \examples{

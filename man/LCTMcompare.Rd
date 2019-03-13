@@ -8,7 +8,9 @@
 LCTMcompare(modelA, modelB)
 }
 \arguments{
-\item{model}{is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
+\item{modelA}{is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
+
+\item{modelB}{the model to be compared which is the output from hlme() R model or model is the output of SASmodelbuilder(oe, os, op, of) passed through it}
 }
 \value{
 A selection of model adequacy tests, including the APPA (average posterior probability of assignment), the OCC (odds of correct classification), entropy $E$, Relative entropy ($E_k$),
@@ -17,28 +19,27 @@ A selection of model adequacy tests, including the APPA (average posterior proba
 The function LCTMcompare gives a summary of comparison between fitted LCTM models.
 }
 \examples{
-data(bmi_long, package="LCTMtools")
+data(bmi_long, package='LCTMtools')
 require(lcmm)
-library(LCTMtools)
-set.seed(002010800)
-data(bmi_long, package = "LCTMtools" )
+set.seed(999)
+data(bmi_long, package = 'LCTMtools' )
 # Use the hlme function from the 'lcmm' R package to fit a 2 class latent class trajectory model
-model2classes <- lcmm::hlme(fixed = BMI ~ Age + I(Age^2),
-                      mixture= ~ Age,
-                      random = ~ Age,
+model2classes <- lcmm::hlme(fixed = bmi ~ age + I(age^2),
+                      mixture= ~ age,
+                      random = ~ age,
                       ng = 2,
                       nwg = TRUE,
-                      subject = "ID",
+                      subject = "id",
                       data = bmi_long[1:500, ] )
 # Compute model adequacy measures
 LCTMtoolkit(model2classes)
 # Compare with a 3 class model
-model3classes <- lcmm::hlme(fixed = BMI ~ Age + I(Age^2),
-                      mixture= ~ Age,
-                      random = ~ Age,
+model3classes <- lcmm::hlme(fixed = bmi ~ age + I(age^2),
+                      mixture= ~ age,
+                      random = ~ age,
                       ng = 3,
                       nwg = TRUE,
-                      subject = "ID",
+                      subject = "id",
                       data = bmi_long[1:500, ] )
 LCTMtoolkit(model3classes)
 LCTMcompare(model2classes, model3classes)

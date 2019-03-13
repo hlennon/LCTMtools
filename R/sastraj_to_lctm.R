@@ -13,13 +13,18 @@
 #' @export
 
 sastraj_to_lctm <- function(oe, of, op, os) {
-  n <- nrow(of)
-  K <- nrow(os)
-  mod <- list(NULL)
-  mod$pprob <- as.data.frame(of[, c("ID", "GROUP", paste0("GRP", 1:K, "PRB", sep = ""))])
-  colnames(mod$pprob) <- c("ID", "class", paste0("prob", 1:K, sep = ""))
-  mod$call <- "SAS"
-  # model$par <- os$PI
-  model <- mod
-  return(model)
+    n <- nrow(of)
+    K <- nrow(os)
+    mod <- list(NULL)
+    mod$pprob <- as.data.frame(of[, c("ID", "GROUP", paste0("GRP", 1:K, "PRB",
+        sep = ""))])
+    colnames(mod$pprob) <- c("ID", "class", paste0("prob", 1:K, sep = ""))
+    mod$call <- "SAS"
+    mod$os   <- os
+    mod$oe   <- oe
+    mod$of   <- of
+    mod$op   <- op
+    # model$par <- os$PI
+    model <- mod
+    return(model)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/appa.R
 \name{appa}
 \alias{appa}
-\title{Computes the Average Posterior Probability Assignment (APPA) for a K latent class trajectory model.}
+\title{The Average Posterior Probability Assignment (APPA)}
 \usage{
 appa(p)
 }
@@ -13,6 +13,9 @@ appa(p)
 The Average Posterior Probability Assignment (APPA) for each class
 }
 \description{
+\code{appa}
+}
+\details{
 Computes the Average Posterior Probability Assignment (APPA) for a K latent class trajectory model.
 }
 \examples{

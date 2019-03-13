@@ -8,10 +8,10 @@
 
 
 relative_entropy <- function(p) {
-  K <- ncol(p)
-  n <- nrow(p)
-
-  relEntropy <- 1 + (sum(p * log(p)) / (n * log(K)))
-
-  return(relEntropy)
+    K <- ncol(p)
+    n <- nrow(p)
+    
+    relEntropy <- 1 + (sum(p * log(p), na.rm = TRUE)/(n * log(K)))
+    
+    return(relEntropy)
 }

@@ -8,13 +8,13 @@
 #' @export
 
 mismatch <- function(p, pi) {
-  # determine class
-  group <- class_assignment(p)
-  K <- ncol(p)
-
-  # Tabulate the actual proportions
-  actprop <- tabulate(group, nbins = K) / nrow(p)
-
-  # Compute the mismatch (mismatch=actual-estimated)
-  return(actprop - pi)
+    # determine class
+    group <- class_assignment(p)
+    K <- ncol(p)
+    
+    # Tabulate the actual proportions
+    actprop <- tabulate(group, nbins = K)/nrow(p)
+    
+    # Compute the mismatch (mismatch=actual-estimated)
+    return(actprop - pi)
 }

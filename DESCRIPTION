@@ -1,12 +1,23 @@
 Package: LCTMtools
 Type: Package
 Title: Latent Class Trajectory Models: Tools for checking adequacy
-Version: 0.1.2
-Author: Hannah Lennon
-Maintainer: Hannah Lennon <hannah.lennon.manchester@gmail.com>
-Description: A selection of model adequacy tests for Latent Class Trajectory Models (LCTMs) which include the APPA (average posterior probability of assignment), the OCC (odds of correct classification), entropy, Relative entropy.
+Version: 0.1.3
+Authors@R: person("Hannah", "Lennon", email = "hannah.lennon.manchester@gmail.com",
+  role = c("aut", "cre"))
+URL: http://www.hannahlennon.com
+BugReports: https://github.com/hlennon/LCTMtools/issues
+Description: A selection of model adequacy tests for Latent Class Trajectory Models (LCTMs) 
+                    which include the APPA (average posterior probability of assignment), the OCC (odds of correct classification), entropy and relative entropy. 
+                    See the github.com/hlennon/LCTMtools for more information, documentation and examples.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
-Imports: stats
+Imports: 
+    stats,
+    psych,
+    lcmm
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
