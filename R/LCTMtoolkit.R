@@ -56,6 +56,13 @@ LCTMtoolkit <- function(model) {
 
     print(outputs2)
 
-    outputs3 <- cbind(rbind(outputs, numeric(K)), outputs1)
+    outputs3 <- list(appa=outputs[1,1:K],
+                     occ=outputs[2,1:K],
+                     mismatch=outputs[3,1:K],
+                     entropy=ep,
+                     relativeentropy=rep,
+                     BIC=model$BIC,
+                     AIC=model$AIC
+                     )
     return(outputs3)
 }

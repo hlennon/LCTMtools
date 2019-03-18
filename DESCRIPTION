@@ -16,7 +16,9 @@ RoxygenNote: 6.1.1
 Imports: 
     stats,
     psych,
-    lcmm
+    lcmm,
+    ggplot2,
+    dplyr
 Suggests: 
     knitr,
     rmarkdown
