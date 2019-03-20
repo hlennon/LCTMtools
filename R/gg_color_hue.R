@@ -8,6 +8,7 @@
 #' @examples
 #' gg_color_hue(2)
 #' gg_color_hue(4)
+#' plot(1:10, pch=12, col=gg_color_hue(10), lwd=30, xaxt="n", yaxt="n", ylab="", xlab="")
 #' @export
 #'
 gg_color_hue <- function(n) {

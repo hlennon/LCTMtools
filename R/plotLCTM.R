@@ -1,9 +1,11 @@
 #' plotLCTM
 #'
-#' A global measure of uncertainty with values close to zero implying a good model. Entropy is a global measure of classification uncertainty, which takes into account all N × K posterior probabilities. The entropy of a model is defined as which takes values from [0,infinity), with higher values indicating a larger amount of uncertainty. Entropy values closest to 0 correspond to models with least classification uncertainty.
+#' A wrapper funciton to plot hlme trajectories in ggplot2 style.
+#' This does the same fuction as predictY in the lcmm package.
 #'
 #' @param m  fitted hlme or lcmm model using the lcmm R package
 #' @return  A plot in ggplot style
+#' @importFrom grDevices hcl
 #' @examples
 #' library(ggplot2)
 #' data(bmi_long, package='LCTMtools')
@@ -14,14 +16,16 @@
 #' nwg=TRUE, ng=2, subject="id",
 #' data=bmi_long[1:500, ])
 #' plotLCTM(model2class, shape="linear")
-#' plotLCTM(m, shape="linear")
+#'
+#' library(splines) # For use of natural splines
 #' model2class_splines <- lcmm::hlme(fixed = bmi ~ ns(age, knots=2),
 #' mixture= ~ ns(age, knots=2),
 #' random= ~ age,
 #' nwg=TRUE, ng=2, subject="id",
 #' data=bmi_long[1:500, ])
-#' newdat <-  data.frame(age=seq(xlimit[1], xlimit[2], length=100))
-#' plotLCTM(model2class_splines, shape="splines", splinesnewdata = newdat)
+#' newdat <-  data.frame(age=seq(0, 4.7, length=100))
+#' #plotLCTM(model2class_splines, shape="splines", splinesnewdata = newdat,
+#' #xlimit=c(0, 4.7), ylimit=c(20, 40))
 #' @export
 plotLCTM <- function(m, shape, xlimit=c(0, 4.7), ylimit=c(20, 40), splinesnewdata=NULL){
 
@@ -49,7 +53,7 @@ plotLCTM <- function(m, shape, xlimit=c(0, 4.7), ylimit=c(20, 40), splinesnewdat
 
 
                                         ymeantraj <- tidyr::gather(as.data.frame(ymeantrajmat), key="class", value=y)
-                                        ymeantraj <- bind_cols(age=rep(age, k), y=ymeantraj)
+                                        ymeantraj <- dplyr::bind_cols(age=rep(age, k), y=ymeantraj)
                                         ymeantraj$class <- as.factor(ymeantraj$class)
                     }
 
@@ -59,9 +63,10 @@ plotLCTM <- function(m, shape, xlimit=c(0, 4.7), ylimit=c(20, 40), splinesnewdat
                                         f <- matrix(f, ncol=k, nrow=s)
                                         for(i in 1:k) ymeantraj[[i]] <- f[i,1] + f[i,2]*age + f[i,3]*(age^2)
                                         ymeantrajmat <- sapply(ymeantraj, cbind)
+                                        ymeantrajmat <- as.data.frame(ymeantrajmat)
                                         colnames(ymeantrajmat) <- paste("Class", 1:k)
                                         ymeantraj <- tidyr::gather(as.data.frame(ymeantrajmat), key="class", value=y)
-                                        ymeantraj <- bind_cols(age=rep(age, k), y=ymeantraj)
+                                        ymeantraj <- dplyr::bind_cols(age=rep(age, k), y=ymeantraj)
                                         ymeantraj$class <- as.factor(ymeantraj$class)
                     }
 
@@ -72,7 +77,7 @@ plotLCTM <- function(m, shape, xlimit=c(0, 4.7), ylimit=c(20, 40), splinesnewdat
                                         predy <- preds$pred
                                         colnames(predy) <- paste0("Class", 1:k)
                                         ymeantraj <- tidyr::gather(as.data.frame(predy), key="class", value=y)
-                                        ymeantraj <- bind_cols(age=c(rep(unlist(preds$times), k)), y=ymeantraj)
+                                        ymeantraj <- dplyr::bind_cols(age=c(rep(unlist(preds$times), k)), y=ymeantraj)
 
 
 

@@ -40,7 +40,7 @@ residualplot_step1 <- function(model, nameofoutcome="bmi", ylimit=c(-5,5)){
 
 
                                         pname <- paste0("p", i)
-                                        assign(pname,  ggplot(data = plotvaluessub, aes(x = age, y = Residuals, group = class))+
+                                        assign(pname,  ggplot2::ggplot(data = plotvaluessub, aes(x = age, y = Residuals, group = class))+
                                                                    theme(axis.text=element_text(size=16),text = element_text(size=16)) +
                                                                    geom_point() +
                                                                    stat_summary(fun.y=mean, geom="line", size = 3, col="blue", group=1) +
