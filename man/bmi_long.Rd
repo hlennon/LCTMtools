@@ -4,7 +4,7 @@
 \name{bmi_long}
 \alias{bmi_long}
 \title{Body Mass Index (BMI) repeated measures of 10,000 individuals in long format.}
-\format{A list of two formats data frame with 53940 rows and 10 variables:
+\format{A long format data frame of simulated BMI values of 10,000 individuals.
 \describe{
   \item{id}{Individual ID}
   \item{age}{Age of BMI measure, in years}
@@ -15,6 +15,6 @@
 bmi_long
 }
 \description{
-A list containing a long and wide format dataset of BMI values of 10,000 individuals.
+A long format data frame of simulated BMI values of 10,000 individuals.
 }
 \keyword{datasets}
