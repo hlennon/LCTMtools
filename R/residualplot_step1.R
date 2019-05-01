@@ -8,47 +8,50 @@
 #' @return  Class-specific residual plots in ggplot style
 #' @examples
 #' library(ggplot2)
-#' data(bmi_long, package='LCTMtools')
+#' data(bmi_long, package = "LCTMtools")
 #' require(lcmm)
-#' model2class <- lcmm::hlme(fixed = bmi ~ age,
-#' mixture= ~ age,
-#' random= ~ -1,
-#' nwg=TRUE, ng=2, subject="id",
-#' data=bmi_long[1:500, ])
-#' ###residualplot_step1(model, nameofoutcome="bmi", ylimit=c(-5,5))
+#' model2class <- lcmm::hlme(
+#'   fixed = bmi ~ age,
+#'   mixture = ~age,
+#'   random = ~ -1,
+#'   nwg = TRUE, ng = 2, subject = "id",
+#'   data = bmi_long[1:500, ]
+#' )
+#' ### residualplot_step1(model2class, nameofoutcome="bmi", type = "line")
 #' @export
 
-residualplot_step1 <- function(model, nameofoutcome="bmi", ylimit=c(-5,5)){
+residualplot_step1 <- function(model, nameofoutcome = "bmi", data = bmi_long, type = "point") {
+  library(dplyr)
 
+  k <- model$ng
+  preds <- model$pred
+  names(preds)[6] <- nameofoutcome
+  nameofid <- names(model$pred)[1]
 
-                    k     <- model1$ng
-                    preds <- model1$pred
-                    names(preds)[6] <- nameofoutcome
-                    nameofid        <- names(model$pred)[1]
-                    test <- dplyr::left_join(preds, model$pprob, .by=nameofid)
-                    test <- dplyr::left_join(test, bmi_long, .by=c(nameofid, nameofoutcome))
+  test <- dplyr::left_join(preds, model$pprob, .by = nameofid)
+  test <- dplyr::left_join(test, data, .by = c(nameofid, nameofoutcome))
+  test <- test %>%
+    group_by(class) %>%
+    mutate(Std_resid = resid_ss / sqrt((1 / (length(resid_ss) - 1)) * sum(resid_ss^2)))
 
-                    plotvalues <- NULL
+  library(ggplot2)
 
-                    for(i in 1:k){
-
-                                        newplotvalues <- test %>% filter(class==i) %>% mutate(Residuals=bmi-eval(parse(text=paste0("pred_ss",i))))
-                                        plotvalues <- rbind(plotvalues, newplotvalues)
-
-                                        plotvaluessub <- plotvalues %>% filter(class==i)
-
-
-
-                                        pname <- paste0("p", i)
-                                        assign(pname,  ggplot2::ggplot(data = plotvaluessub, aes(x = age, y = Residuals, group = class))+
-                                                                   theme(axis.text=element_text(size=16),text = element_text(size=16)) +
-                                                                   geom_point() +
-                                                                   stat_summary(fun.y=mean, geom="line", size = 3, col="blue", group=1) +
-                                                                   ggtitle("Residuals in class", i) +
-                                                                   ylim(ylimit))
-
-                    }
-                    return(print(eval(parse(text=(paste0("p",1:k))))))
-
-                    # print(ggarrange(eval(parse(text=(paste0("p",1:k)))), width=1, ncol = 2))
+  if (type != "point") {
+    p <- ggplot(
+      data = test,
+      aes(x = age, y = Std_resid, group = id)
+    ) +
+      geom_line(alpha = 0.3) +
+      geom_smooth(mapping = aes(x = age, y = Std_resid, group = NULL), method = "loess") +
+      facet_wrap(~class)
+  } else {
+    p <- ggplot(
+      data = test,
+      aes(x = age, y = Std_resid, group = id)
+    ) +
+      geom_poin(alpha = 0.7) +
+      geom_smooth(mapping = aes(x = age, y = Std_resid, group = NULL), method = "loess") +
+      facet_wrap(~class)
+  }
+  p
 }
