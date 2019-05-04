@@ -35,6 +35,8 @@ residualplot_step1 <- function(model, nameofoutcome = "bmi", nameofage = "idade"
   names(preds)[6] <- nameofoutcome
   nameofid <- names(model$pred)[1]
   names(data)[names(data) == nameofage] <- "idade"
+  nameofage <- names(data)[names(data) == "idade"]
+
 
   test <- dplyr::left_join(preds, model$pprob, .by = nameofid)
   test <- dplyr::left_join(test, data, .by = c(nameofid, nameofoutcome))
@@ -47,21 +49,25 @@ residualplot_step1 <- function(model, nameofoutcome = "bmi", nameofage = "idade"
   if (type != "point") {
     p <- ggplot(
       data = test,
-      aes(x = idade, y = Std_resid, group = id)
+      aes_string(x = nameofage, y = "Std_resid", group = nameofid)
     ) +
       geom_line(alpha = 0.3) +
-      geom_smooth(mapping = aes(x = idade, y = Std_resid, group = NULL),
-                  method = "loess", colour = "red", size = 1.2) +
+      geom_smooth(
+        mapping = aes_string(x = nameofage, y = "Std_resid", group = NULL),
+        method = "loess", colour = "red", size = 1.2
+      ) +
       labs(x = "Idade", y = "Resíduos padronizados") +
       facet_wrap(~class)
   } else {
     p <- ggplot(
       data = test,
-      aes(x = idade, y = Std_resid, group = id)
+      aes_string(x = nameofage, y = "Std_resid", group = nameofid)
     ) +
-      geom_poin(alpha = 0.7) +
-      geom_smooth(mapping = aes(x = idade, y = Std_resid, group = NULL), method = "loess",
-                  method = "loess", colour = "red", size = 1.2) +
+      geom_point(alpha = 0.7) +
+      geom_smooth(
+        mapping = aes_string(x = nameofage, y = "Std_resid", group = NULL),
+        method = "loess", colour = "red", size = 1.2
+      ) +
       labs(x = "Idade", y = "Resíduos padronizados") +
       facet_wrap(~class)
   }
