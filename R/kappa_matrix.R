@@ -12,10 +12,11 @@
 #' model1 <- hlme(fixed = bmi ~ age,
 #' mixture= ~ age,
 #' random= ~ age,
-#' nwg=TRUE, ng=2, subject="id", data=bmi_long[1:500, ])
+#' nwg=TRUE, ng=2, subject="id", data=data.frame(bmi_long[1:500, ]))
+#'
 #' model2 <- hlme(fixed = ~ age,
 #' mixture= ~ age,
-#' random= ~1, nwg=FALSE, ng=2, subject="id", data=bmi_long[1:500, ])
+#' random= ~1, nwg=FALSE, ng=2, subject="id", data=data.frame(bmi_long[1:500, ]))
 #' ConfMatrix <- confusion_matrix(model1, model2)
 #' kappa_matrix(ConfMatrix)
 #' @export

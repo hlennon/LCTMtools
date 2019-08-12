@@ -25,7 +25,7 @@ model2class <- lcmm::hlme(fixed = bmi ~ age,
 mixture= ~ age,
 random= ~ age,
 nwg=TRUE, ng=2, subject="id",
-data=bmi_long[1:500, ])
+data=data.frame(bmi_long[1:500, ]))
 plotLCTM(model2class, shape="linear")
 
 library(splines) # For use of natural splines
@@ -33,7 +33,7 @@ model2class_splines <- lcmm::hlme(fixed = bmi ~ ns(age, knots=2),
 mixture= ~ ns(age, knots=2),
 random= ~ age,
 nwg=TRUE, ng=2, subject="id",
-data=bmi_long[1:500, ])
+data=data.frame(bmi_long[1:500, ]))
 newdat <-  data.frame(age=seq(0, 4.7, length=100))
 #plotLCTM(model2class_splines, shape="splines", splinesnewdata = newdat,
 #xlimit=c(0, 4.7), ylimit=c(20, 40))

@@ -23,7 +23,7 @@ model2class <- lcmm::hlme(fixed = bmi ~ age,
 mixture= ~ age,
 random= ~ age,
 nwg=TRUE, ng=2, subject="id",
-data=bmi_long[1:500, ])
+data=data.frame(bmi_long[1:500, ]))
 postprob(model2class)
 LCTMtoolkit(model2class)
 }

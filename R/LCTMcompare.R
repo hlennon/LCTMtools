@@ -19,7 +19,7 @@
 #'                       ng = 2,
 #'                       nwg = TRUE,
 #'                       subject = "id",
-#'                       data = bmi_long[1:500, ] )
+#'                       data = data.frame(bmi_long[1:500, ] ))
 #' # Compute model adequacy measures
 #' LCTMtoolkit(model2classes)
 #' # Compare with a 3 class model
@@ -29,7 +29,7 @@
 #'                       ng = 3,
 #'                       nwg = TRUE,
 #'                       subject = "id",
-#'                       data = bmi_long[1:500, ] )
+#'                       data = data.frame(bmi_long[1:500, ] ))
 #' LCTMtoolkit(model3classes)
 #' LCTMcompare(model2classes, model3classes)
 #' @export

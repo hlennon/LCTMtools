@@ -4,11 +4,12 @@ Latent Class Trajectory Modelling Tools: an R Package
 
 Maintainer: Hannah Lennon  
 Contact: lennonh@iarc.fr    
-Last Updated: March 2019
+Last Updated: August 2019
 
 
 To install the R package, in the R console use the command 
 ```{r}
+install.packages("devtools")
 devtools::install_github("hlennon/LCTMtools")
 ```  
 
@@ -48,7 +49,7 @@ model2classes <- lcmm::hlme(fixed = bmi ~ age + I(age^2),
                       ng = 2, 
                       nwg = TRUE,  
                       subject = "id", 
-                      data = bmi_long[1:500, ] )
+                      data = data.frame(bmi_long[1:500, ]) )
 
 
 # Compute model adequacy measures
@@ -63,7 +64,7 @@ model3classes <- lcmm::hlme(fixed = bmi ~ age + I(age^2),
                       ng = 3, 
                       nwg = TRUE,  
                       subject = "id", 
-                      data = bmi_long[1:500, ] )
+                      data = data.frame(bmi_long[1:500, ]) )
 
 
 LCTMtoolkit(model3classes)

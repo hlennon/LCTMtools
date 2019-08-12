@@ -4,14 +4,19 @@
 \alias{residualplot_step1}
 \title{residualplot_step1}
 \usage{
-residualplot_step1(model, nameofoutcome = "bmi", ylimit = c(-5, 5))
+residualplot_step1(model, nameofoutcome = "bmi", nameofage = "age",
+  data = bmi_long, type = "point")
 }
 \arguments{
 \item{model}{fitted hlme or lcmm model using the lcmm R package}
 
 \item{nameofoutcome}{Name of the longitudinal variable in the dataset}
 
-\item{ylimit}{Plot y-axis limits}
+\item{nameofage}{Name of the age variable in the dataset}
+
+\item{data}{Name of the dataframe (long format) used for the regression fit}
+
+\item{type}{Type of residual plots: ines (spaghetti) or points}
 }
 \value{
 Class-specific residual plots in ggplot style
@@ -21,12 +26,19 @@ A wrapper funciton to implement step 1 of the 8 step framework. This is a wrappe
 }
 \examples{
 library(ggplot2)
-data(bmi_long, package='LCTMtools')
+data(bmi_long, package = "LCTMtools")
 require(lcmm)
-model2class <- lcmm::hlme(fixed = bmi ~ age,
-mixture= ~ age,
-random= ~ -1,
-nwg=TRUE, ng=2, subject="id",
-data=bmi_long[1:500, ])
-###residualplot_step1(model, nameofoutcome="bmi", ylimit=c(-5,5))
+model2class <- lcmm::hlme(
+  fixed = bmi ~ age,
+  mixture = ~age,
+  random = ~ -1,
+  nwg = TRUE, ng = 2, subject = "id",
+  data = data.frame(bmi_long[1:500, ])
+)
+# residualplot_step1(model2class,
+#  nameofoutcome = "bmi",
+#  nameofage = "age",
+#  data = bmi_long,
+#  type = "line"
+#)
 }

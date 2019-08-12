@@ -13,12 +13,16 @@
 #' mixture= ~ age,
 #' random= ~ age,
 #' nwg=TRUE, ng=2, subject="id",
-#' data=bmi_long[1:500, ])
+#' data=data.frame(bmi_long[1:500, ]))
 #' postprob(model2class)
 #' LCTMtoolkit(model2class)
 #' @export
 
 LCTMtoolkit <- function(model) {
+
+   if(!(class(model)!="hlme"|
+        class(model)!="SAS") |
+      class(model)!="lcmm") print("class(model) type required to be hlme, lcmm or an imported PROC TRAJ object from SAS");
     n <- nrow(model$pprob)
     K <- ncol(model$pprob) - 2
     p <- model$pprob[, c(paste0("prob", 1:K, sep = ""))]

@@ -17,25 +17,25 @@
 #'   mixture = ~age,
 #'   random = ~ -1,
 #'   nwg = TRUE, ng = 2, subject = "id",
-#'   data = bmi_long[1:500, ]
+#'   data = data.frame(bmi_long[1:500, ])
 #' )
-#' residualplot_step1(model2class,
-#'   nameofoutcome = "bmi",
-#'   nameofage = "age",
-#'   data = bmi_long,
-#'   type = "line"
-#' )
+#' # residualplot_step1(model2class,
+#' #  nameofoutcome = "bmi",
+#' #  nameofage = "age",
+#' #  data = bmi_long,
+#' #  type = "line"
+#' #)
 #' @export
 
-residualplot_step1 <- function(model, nameofoutcome = "bmi", nameofage = "idade", data = bmi_long, type = "point") {
+residualplot_step1 <- function(model, nameofoutcome = "bmi", nameofage = "age", data = bmi_long, type = "point") {
   library(dplyr)
 
   k <- model$ng
   preds <- model$pred
   names(preds)[6] <- nameofoutcome
   nameofid <- names(model$pred)[1]
-  names(data)[names(data) == nameofage] <- "idade"
-  nameofage <- names(data)[names(data) == "idade"]
+  names(data)[names(data) == nameofage] <- "ID"
+  nameofage <- names(data)[names(data) == "ID"]
 
 
   test <- dplyr::left_join(preds, model$pprob, .by = nameofid)
@@ -49,26 +49,26 @@ residualplot_step1 <- function(model, nameofoutcome = "bmi", nameofage = "idade"
   if (type != "point") {
     p <- ggplot(
       data = test,
-      aes_string(x = nameofage, y = "Std_resid", group = nameofid)
+      aes_string(x = nameofage, y = "Standardised residuals", group = nameofid)
     ) +
       geom_line(alpha = 0.3) +
       geom_smooth(
-        mapping = aes_string(x = nameofage, y = "Std_resid", group = NULL),
+        mapping = aes_string(x = nameofage, y = "Standardised residuals", group = NULL),
         method = "loess", colour = "red", size = 1.2
       ) +
-      labs(x = "Idade", y = "Resíduos padronizados") +
+      labs(x = "ID", y = "Residulas padronizados") +
       facet_wrap(~class)
   } else {
     p <- ggplot(
       data = test,
-      aes_string(x = nameofage, y = "Std_resid", group = nameofid)
+      aes_string(x = nameofage, y = "Standardised residuals", group = nameofid)
     ) +
       geom_point(alpha = 0.7) +
       geom_smooth(
-        mapping = aes_string(x = nameofage, y = "Std_resid", group = NULL),
+        mapping = aes_string(x = nameofage, y = "Standardised residuals", group = NULL),
         method = "loess", colour = "red", size = 1.2
       ) +
-      labs(x = "Idade", y = "Resíduos padronizados") +
+      labs(x = "ID", y = "Standardised residuals") +
       facet_wrap(~class)
   }
   p
