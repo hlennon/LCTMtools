@@ -45,7 +45,7 @@ An example (simulated) dataset *bmi* is provided to describe the steps throughou
 Five classes of BMI trajectories across adult lifetime for N=10,000 individuals.
 
 ```{r}
-library(LCTMtools)
+library( LCTMtools )
 data(bmi_long, package = "LCTMtools")
 ```
 
@@ -149,41 +149,3 @@ hlme/lcmm
 
 
 We used maximum likelihood approaches to fit the model with the *hlme* function from the *lcmm* library in the R software environment and cross-checked results using the PROC TRAJ function in SAS traj library (SAS Institute, Cary, North Carolina, USA).
-
-
-## STEP 1:
-We initially constructed a scoping model provisionally selecting the plausible number of classes based on available literature; in the context of BMI trajectories, we used $K=5$ classes as reported elsewhere.
-
-To determine the initial working model structure of random effects, we followed the rationale of Verbeke and Molenbergh and examined the shape of standardised residual plots for each of the five classes in a model with no random effects. If the residual profile could be approximated by a flat, straight line or a curve, then a random intercept, slope or quadratic term, respectively, were considered. Preliminary plots suggested preference for a quadratic random effects model (supplementary figure S1).
-
-
-#' Step 1: Select the form of the random effect structure
-
-Fit a latent class modelel with no random effects, e.g. in the lcmm package in R this can be done by specifying $\verb|random=~-1|$. As a rough working modelel, chose fixed effects form and number of likely classes, e.g. here k = 5.
-```{r}
-data(bmi_long)
-model1 <- lcmm::hlme(fixed=bmi~1+age+I(age^2),
-                   mixture = ~1+age+I(age^2),
-                   random=~-1,
-                   subject="id",
-                   ng=5,
-                   nwg=FALSE, 
-                   data=data.frame(bmi_long[1:200,])
-                   )
-```
-
-
-We then feed the fitted model to the step1 function in LCTMtools to examine the class speciifc residuals. 
-
-```{r eval=FALSE, fig.align="center", fig.height=3, fig.width=5, message=FALSE}
-residualplot_step1(model1)
-```
-
-
-
-## STEP 2
-We refined the preliminary working model from step 1 to determine the optimal number of classes, testing $K=1, ... 7$. 
-The number of classes chosen can be chosen here based on the lowest Bayesian information criteria (BIC).
-
-
-

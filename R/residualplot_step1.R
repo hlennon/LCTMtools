@@ -23,12 +23,11 @@
 #'   nameofoutcome = "bmi",
 #'   nameofage = "age",
 #'   data = bmi_long,
-#'   type = "line"
 #' )
 #' @export
 
 residualplot_step1 <- function(model, nameofoutcome="bmi",  nameofage = "age", data = bmi_long,
-                                                   type = "line", ylimit=c(-5,5)){
+                                                   ylimit=c(-5,5)){
 
                                         require(dplyr)
                                         k     <- model$ng
@@ -42,7 +41,7 @@ residualplot_step1 <- function(model, nameofoutcome="bmi",  nameofage = "age", d
 
                                         for(i in 1:k){
 
-                                                            newplotvalues <- test %>% filter(class==i) %>% mutate(Residuals=nameofoutcome-eval(parse(text=paste0("pred_ss",i))))
+                                                            newplotvalues <- test %>% filter(class==i) %>% mutate(Residuals=get(nameofoutcome)-eval(parse(text=paste0("pred_ss",i))))
                                                             plotvalues <- rbind(plotvalues, newplotvalues)
 
                                                             plotvaluessub <- plotvalues %>% filter(class==i)

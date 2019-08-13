@@ -5,7 +5,7 @@
 \title{residualplot_step1}
 \usage{
 residualplot_step1(model, nameofoutcome = "bmi", nameofage = "age",
-  data = bmi_long, type = "line", ylimit = c(-5, 5))
+  data = bmi_long, ylimit = c(-5, 5))
 }
 \arguments{
 \item{model}{fitted hlme or lcmm model using the lcmm R package}
@@ -39,6 +39,5 @@ model2class <- lcmm::hlme(
   nameofoutcome = "bmi",
   nameofage = "age",
   data = bmi_long,
-  type = "line"
 )
 }
