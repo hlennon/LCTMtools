@@ -5,7 +5,7 @@
 \title{residualplot_step1}
 \usage{
 residualplot_step1(model, nameofoutcome = "bmi", nameofage = "age",
-  data = bmi_long, type = "point")
+  data = bmi_long, type = "line", ylimit = c(-5, 5))
 }
 \arguments{
 \item{model}{fitted hlme or lcmm model using the lcmm R package}
@@ -16,7 +16,7 @@ residualplot_step1(model, nameofoutcome = "bmi", nameofage = "age",
 
 \item{data}{Name of the dataframe (long format) used for the regression fit}
 
-\item{type}{Type of residual plots: ines (spaghetti) or points}
+\item{type}{Type of residual plots: lines (spaghetti) or points}
 }
 \value{
 Class-specific residual plots in ggplot style
@@ -35,10 +35,10 @@ model2class <- lcmm::hlme(
   nwg = TRUE, ng = 2, subject = "id",
   data = data.frame(bmi_long[1:500, ])
 )
-# residualplot_step1(model2class,
-#  nameofoutcome = "bmi",
-#  nameofage = "age",
-#  data = bmi_long,
-#  type = "line"
-#)
+ residualplot_step1(model2class,
+  nameofoutcome = "bmi",
+  nameofage = "age",
+  data = bmi_long,
+  type = "line"
+)
 }
