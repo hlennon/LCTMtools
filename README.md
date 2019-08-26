@@ -34,9 +34,9 @@ https://bmjopen.bmj.com/content/bmjopen/8/7/e020683/DC1/embed/inline-supplementa
 ## Help Files
 There are two help manuals available above:    
 + 1) The standard R manual detailing the input and outputs of each of the functions, called LCTMtools.pdf  
-https://github.com/hlennon/LCTMtools/vignettes/LCTMtools.pdf   
+https://github.com/hlennon/LCTMtools/blob/master/vignettes/LCTMtools.pdf   
 + 2) A vignette with a guided example, named LCTMtools-vignette 
-http://rpubs.com/hlennon/LCTMtoolsvignette   or https://github.com/hlennon/LCTMtools/vignettes/LCTMtoolsvignette.pdf 
+http://rpubs.com/hlennon/LCTMtoolsvignette   or https://github.com/hlennon/LCTMtools/blob/master/vignettes/LCTMtoolsvignette.pdf 
 
 
 ## Brief Example
