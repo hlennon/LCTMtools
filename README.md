@@ -26,11 +26,17 @@ Lennon H, Kelly S, Sperrin M, et al., Framework to construct and interpret Laten
 Available at
 https://bmjopen.bmj.com/content/8/7/e020683
 
+Supplementary material contains extra details:
+https://bmjopen.bmj.com/content/bmjopen/8/7/e020683/DC1/embed/inline-supplementary-material-1.pdf?download=true
+
+
 
 ## Help Files
 There are two help manuals available above:    
 + 1) The standard R manual detailing the input and outputs of each of the functions, called LCTMtools.pdf  
-+ 2) A vignette with a guided example, named LCTMtools-vignette http://rpubs.com/hlennon/LCTMtoolsvignette 
+https://github.com/hlennon/LCTMtools/blob/master/vignettes/LCTMtools.pdf   
++ 2) A vignette with a guided example, named LCTMtools-vignette 
+http://rpubs.com/hlennon/LCTMtoolsvignette   
 
 
 ## Brief Example
@@ -74,6 +80,8 @@ LCTMcompare(model2classes, model3classes)
 
 
 ### Citation
+Please cite as 
+
 Hannah Lennon. {LCTMtools}: Latent Class Trajectory Models tools R Functions. R package version 0.1.2.
 
 
