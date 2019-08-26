@@ -30,7 +30,7 @@ https://bmjopen.bmj.com/content/8/7/e020683
 ## Help Files
 There are two help manuals available above:    
 + 1) The standard R manual detailing the input and outputs of each of the functions, called LCTMtools.pdf  
-+ 2) A vignette with a guided example, named LCTMtools-vignette.pdf 
++ 2) A vignette with a guided example, named LCTMtools-vignette http://rpubs.com/hlennon/LCTMtoolsvignette 
 
 
 ## Brief Example
