@@ -1,14 +1,7 @@
 base
+knitr
 LCTMtools
+ggplot2
 survival
 lcmm
-png
-MASS
-nnet
-nlme
-mmlcr
-ggplot2
-dplyr
-kableExtra
-lattice
-caret
+here
