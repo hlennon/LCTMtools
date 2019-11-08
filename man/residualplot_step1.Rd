@@ -4,8 +4,8 @@
 \alias{residualplot_step1}
 \title{residualplot_step1}
 \usage{
-residualplot_step1(model, nameofoutcome = "bmi", nameofage = "age",
-  data = bmi_long, ylimit = c(-5, 5))
+residualplot_step1(model, nameofoutcome, nameofage, data, ylimit = c(-50,
+  50))
 }
 \arguments{
 \item{model}{fitted hlme or lcmm model using the lcmm R package}
