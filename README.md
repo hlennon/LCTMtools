@@ -2,8 +2,7 @@
 
 Latent Class Trajectory Modelling Tools: an R Package  
 
-Maintainer: Hannah Lennon  
-Contact: lennonh@iarc.fr    
+Maintainer: This R package is no longer maintained. 
 Last Updated: August 2019
 
 
@@ -94,6 +93,6 @@ Lennon H, Kelly S, Sperrin M, et al
 A special thank you to Charlotte Watson for testing.  
 
 ### Contributing
-I’m happy to receive bug reports, suggestions, questions, and (most of all) contributions to fix problems and add features. I prefer you use the Github issues system over trying to reach out to me in other ways. Pull requests for contributions are encouraged.
+Please note this R package is no longer maintained. The R package is open. Fork requests for contributions are encouraged.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
